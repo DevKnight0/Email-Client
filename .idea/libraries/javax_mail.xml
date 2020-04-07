@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="javax.mail">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/com/aankik/lib/javax.mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/com/aankik/lib/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/com/aankik/lib/jfoenix-9.0.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
