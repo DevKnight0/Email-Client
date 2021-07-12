@@ -87,6 +87,5 @@ public class LoginWindowController extends BaseController implements Initializab
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
-
     }
 }

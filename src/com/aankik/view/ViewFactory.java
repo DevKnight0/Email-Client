@@ -1,10 +1,7 @@
 package com.aankik.view;
 
 import com.aankik.EmailManager;
-import com.aankik.controller.BaseController;
-import com.aankik.controller.LoginWindowController;
-import com.aankik.controller.MainWindowController;
-import com.aankik.controller.OptionWindowController;
+import com.aankik.controller.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -67,6 +64,11 @@ public class ViewFactory {
 
     }
 
+    public void showComposeMessageWindow() {
+
+        BaseController controller = new ComposeMessageController(emailManager, this, "ComposeMessageWindow.fxml");
+        initializeStage(controller);
+    }
 
     private void initializeStage(BaseController baseController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(baseController.getFxmlName()));
@@ -103,6 +105,7 @@ public class ViewFactory {
             scene.getStylesheets().add(getClass().getResource(FontSize.getCssPath(fontSize)).toExternalForm());
         }
     }
+
 
 
 }

@@ -3,43 +3,28 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="334.0" prefWidth="468.0" style="-fx-background-color: #2D3447;"
-            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="334.0" prefWidth="468.0" style="-fx-background-color: #2D3447;" styleClass="container" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="errorLabel" layoutX="65.0" layoutY="287.0" prefHeight="17.0" prefWidth="245.0" textFill="#a0a4ab" />
-      <JFXTextField fx:id="emailAddressField" alignment="CENTER" focusColor="#c1c2cf" unFocusColor="#a0a4ab"
-                    layoutX="64.0" layoutY="89.0" prefHeight="31.0" prefWidth="238.0" promptText="Username">
+      <JFXTextField fx:id="emailAddressField" alignment="CENTER" focusColor="#c1c2cf"  layoutX="64.0" layoutY="89.0" prefHeight="31.0" prefWidth="238.0" promptText="Username" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" styleClass="container" unFocusColor="#9fa3ab">
          <font>
             <Font size="14.0" />
          </font>
-         <effect>
-            <ColorAdjust brightness="0.82" contrast="0.35" hue="0.48" saturation="0.31" />
-         </effect>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
       </JFXTextField>
-      <JFXPasswordField fx:id="passwordField" alignment="CENTER" focusColor="#c1c2cf" layoutX="65.0"
-                        layoutY="160.0" prefHeight="31.0" prefWidth="238.0" promptText="Password" unFocusColor="#a0a4ab">
+      <JFXPasswordField fx:id="passwordField" alignment="CENTER" focusColor="#c1c2cf" layoutX="65.0" layoutY="160.0" prefHeight="31.0" prefWidth="238.0" promptText="Password" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#a1a4ab">
          <font>
             <Font size="14.0" />
          </font>
-         <effect>
-            <ColorAdjust brightness="0.77" contrast="0.31" hue="0.44" saturation="0.09" />
-         </effect>
       </JFXPasswordField>
-      <JFXButton fx:id="SignUp" layoutX="356.0" layoutY="262.0" onAction="#loginButtonAction"
-                 prefHeight="24.0" prefWidth="78.0" style="-fx-background-color: #151928;" text="SignUp" textFill="#3c58fa" />
-      <ImageView fitHeight="24.0" fitWidth="102.0" layoutX="14.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../username.png" />
-         </image>
-      </ImageView>
+      <JFXButton fx:id="SignUp" layoutX="356.0" layoutY="262.0" onAction="#loginButtonAction" prefHeight="24.0" prefWidth="78.0" style="-fx-background-color: #151928;" text="SignUp" textFill="#3c58fa" />
       
    </children>
 </AnchorPane>

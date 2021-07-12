@@ -7,6 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="javax.mail" level="project" />
+    <orderEntry type="library" exported="" name="javax.mail" level="project" />
+    <orderEntry type="library" exported="" name="lib" level="application" />
+    <orderEntry type="library" exported="" name="activation" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="JavaFx" level="project" />
   </component>
 </module>

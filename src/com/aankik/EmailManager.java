@@ -5,6 +5,9 @@ import com.aankik.controller.services.FolderUpdaterService;
 import com.aankik.model.EmailAccount;
 import com.aankik.model.EmailMessage;
 import com.aankik.model.EmailTreeItem;
+import com.aankik.view.IconResolver;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import javax.mail.Flags;
 import javax.mail.Folder;
@@ -19,7 +22,15 @@ public class EmailManager {
     private FolderUpdaterService folderUpdaterService;
     private EmailMessage selectedMessage;
     private EmailTreeItem<String> selectedFolder;
+    private ObservableList<EmailAccount> emailAccounts = FXCollections.observableArrayList();
+    private IconResolver iconResolver = new IconResolver();
 
+
+
+
+    public  ObservableList<EmailAccount> getEmailAccounts(){
+        return  emailAccounts;
+    }
 
     public EmailMessage getSelectedMessage() {
         return selectedMessage;
@@ -45,13 +56,20 @@ public class EmailManager {
         return this.folderList;
     }
 
+
+
+
+
+
     public EmailManager() {
         folderUpdaterService = new FolderUpdaterService(folderList);
         folderUpdaterService.start();//update the email folder
     }
 
     public void addEmailAccount(EmailAccount emailAccount) {
+        emailAccounts.add(emailAccount);
         EmailTreeItem<String> treeItem = new EmailTreeItem<String>(emailAccount.getAddress());
+        treeItem.setGraphic(iconResolver.getIconForFolder(emailAccount.getAddress()));
         FetchFoldersService fetchFoldersService = new FetchFoldersService(emailAccount.getStore(), treeItem, folderList);
         fetchFoldersService.start();
         foldersRoot.getChildren().add(treeItem);
